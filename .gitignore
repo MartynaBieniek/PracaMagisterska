@@ -1,10 +1,13 @@
+# ── środowiska ───────────────────────────
+.venv/
+venv/
+pyvenv.cfg
 
-# ───── Python ─────
+# ── Python cache ─────────────────────────
 __pycache__/
-*.pyc
+*.py[cod]
 
-# ───── OS / backup ─────
-Thumbs.db
+# ── pliki IDE / systemowe ────────────────
+.idea/
 .DS_Store
-~$*
-*.tmp
+Thumbs.db
