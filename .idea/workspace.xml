@@ -27,14 +27,23 @@
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
   <component name="GitHubPullRequestSearchHistory"><![CDATA[{
-  "lastFilter": {}
-}]]></component>
-  <component name="GithubPullRequestsUISettings"><![CDATA[{
-  "selectedUrlAndAccountId": {
-    "url": "https://github.com/MartynaBieniek/PracaMagisterska.git",
-    "accountId": "470cf745-18a7-4337-b12b-a1f47288aa61"
+  "history": [
+    {
+      "assignee": "MartynaBieniek",
+      "author": "MartynaBieniek"
+    }
+  ],
+  "lastFilter": {
+    "assignee": "MartynaBieniek",
+    "author": "MartynaBieniek"
   }
 }]]></component>
+  <component name="GithubPullRequestsUISettings">{
+  &quot;selectedUrlAndAccountId&quot;: {
+    &quot;url&quot;: &quot;https://github.com/MartynaBieniek/PracaMagisterska.git&quot;,
+    &quot;accountId&quot;: &quot;470cf745-18a7-4337-b12b-a1f47288aa61&quot;
+  }
+}</component>
   <component name="HighlightingSettingsPerFile">
     <setting file="file://$PROJECT_DIR$/.venv/data_analysis.py" root0="SKIP_INSPECTION" />
     <setting file="file://$PROJECT_DIR$/.venv/data_hsi.py" root0="SKIP_INSPECTION" />
@@ -60,7 +69,7 @@
     "Python.main.executor": "Run",
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "git-widget-placeholder": "master",
-    "last_opened_file_path": "C:/Users/bieni/PycharmProjects/PracaMagisterska",
+    "last_opened_file_path": "C:/Users/bieni/PycharmProjects/PracaMagisterska — kopia",
     "settings.editor.selected.configurable": "preferences.lookFeel"
   }
 }]]></component>
@@ -80,6 +89,23 @@
       <option name="presentableId" value="Default" />
       <updated>1742161868800</updated>
     </task>
+    <task id="LOCAL-00001" summary="update">
+      <option name="closed" value="true" />
+      <created>1752530506146</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1752530506146</updated>
+    </task>
+    <task id="LOCAL-00002" summary="update">
+      <option name="closed" value="true" />
+      <created>1752530602264</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1752530602264</updated>
+    </task>
+    <option name="localTasksCounter" value="3" />
     <servers />
   </component>
   <component name="VcsManagerConfiguration">
