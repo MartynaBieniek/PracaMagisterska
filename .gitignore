@@ -1,13 +1,16 @@
-# ── środowiska ───────────────────────────
+# ───── PyCharm / JetBrains ─────
+.idea/
+
+# ───── Virtual env ─────
 .venv/
 venv/
-pyvenv.cfg
 
-# ── Python cache ─────────────────────────
+# ───── Python ─────
 __pycache__/
-*.py[cod]
+*.pyc
 
-# ── pliki IDE / systemowe ────────────────
-.idea/
-.DS_Store
+# ───── OS / backup ─────
 Thumbs.db
+.DS_Store
+~$*
+*.tmp
