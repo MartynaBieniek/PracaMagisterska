@@ -30,7 +30,7 @@ def get_data(path, x):
         for i in range(1, df.shape[1]):
             spectrum = df[i].values
             X.append(spectrum)
-            y.append(s)  # Na razie klasy są jako stringi
+            y.append(s)
 
     # Konwersja do NumPy
     X = np.array(X)
@@ -38,7 +38,7 @@ def get_data(path, x):
     print (X.shape)
     # Zamiana etykiet tekstowych na liczby
     encoder = LabelEncoder()
-    y = encoder.fit_transform(y)  # Teraz y to liczby 0–23 zamiast stringów
+    y = encoder.fit_transform(y)
 
     # Normalizacja danych
     scaler = StandardScaler()
@@ -48,5 +48,3 @@ def get_data(path, x):
     X = X[..., np.newaxis]  # Kształt (samples, 601, 1)
 
     return X, y
-
-X_all, y_all = get_data("dane_widma.xlsx", 'x')

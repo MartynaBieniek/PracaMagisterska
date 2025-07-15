@@ -5,7 +5,7 @@ from sklearn.model_selection import train_test_split
 from sklearn.preprocessing import StandardScaler
 from tensorflow.keras.models import Sequential
 
-def create_cnn(input_shape, num_classes, zmienna):
+def create_cnn(input_shape, num_classes, parm):
     model =  keras.Sequential([
         layers.Conv1D(64, kernel_size=5, activation='relu', input_shape=input_shape),
         layers.MaxPooling1D(pool_size=2),
@@ -14,7 +14,7 @@ def create_cnn(input_shape, num_classes, zmienna):
         layers.Conv1D(256, kernel_size=5, activation='relu'),
         layers.MaxPooling1D(pool_size=2),
         layers.Flatten(),
-        layers.Dense(zmienna, activation='relu'),
+        layers.Dense(parm, activation='relu'),
         layers.Dropout(0.3),
         layers.Dense(num_classes, activation='softmax')
     ])
