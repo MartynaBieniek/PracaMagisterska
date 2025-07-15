@@ -4,17 +4,14 @@ import numpy as np
 import time
 import pandas as pd
 import tensorflow as tf
-from tensorflow.keras import initializers
 from sklearn.model_selection import KFold
 
-rozmiar_kroku = [1, 2, 3, 4, 5, 6,7 ,8,9,10]
+step_size = [1, 2, 3, 4, 5, 6,7 ,8,9,10]
 
-rozmiar_filtra = [3, 5, 7,9, 11,13,15,17,19,21]
+filtrer_size = [3, 5, 7,9, 11,13,15,17,19,21]
 
-strat_inicjaliziacji = {
-    "VarianceScaling_FanAvg_Normal": tf.keras.initializers.VarianceScaling(scale=1.0, mode="fan_avg",
-                                                                           distribution="truncated_normal"),
-
+start_initializers = {
+    "VarianceScaling_FanAvg_Normal": tf.keras.initializers.VarianceScaling(scale=1.0, mode="fan_avg", distribution="truncated_normal"),
     "Zeros": tf.keras.initializers.Zeros(),
     "Ones": tf.keras.initializers.Ones(),
     "RandomNormal": tf.keras.initializers.RandomNormal(mean=0.0, stddev=0.05),
@@ -31,39 +28,40 @@ strat_inicjaliziacji = {
     "VarianceScaling_FanAvg_Uniform": tf.keras.initializers.VarianceScaling(scale=1.0, mode="fan_avg", distribution="uniform"),
 }
 
-typ_pooling = ['max', 'avg']
+pooling_type = ['max', 'avg']
 
 pool_sizes = [2, 3, 4]
+
 strides_list = [1, 2, 3]
+
 activation_functions = [
-    "relu",       # klasyczna, szybka i skuteczna
-    "leaky_relu", # odporna na "martwe neurony"
-    "elu",        # łagodniejsza dla wartości ujemnych
-    "selu",       # do sieci samonormalizujących
-    "sigmoid",    # klasyczna, ale może spowalniać trening
-    "tanh",       # lepsza niż sigmoid, ale też podatna na znikający gradient
-    "swish",      # nowsza, skuteczna, ale wolniejsza
-    "softplus",   # wygładzona wersja ReLU
-    "hard_sigmoid", # szybsza wersja sigmoid
-    "gelu"        # popularna w NLP i sieciach typu Transformer
+    "relu",
+    "leaky_relu",
+    "elu",
+    "selu",
+    "sigmoid",
+    "tanh",
+    "swish",
+    "softplus",
+    "hard_sigmoid",
+    "gelu"
 ]
 
-wyjscia= [8, 16, 32, 64, 96, 128, 192, 256, 384, 512]
+hidden_units= [8, 16, 32, 64, 96, 128, 192, 256, 384, 512]
 
 
-def train_model(x, zmienna):
-    # Dane
+def train_model(x, parm):
     X_all, y_all = get_data("dane_widma.xlsx", x)
-    if x== 'c': kolor = "czarny"
-    else: kolor = "niebieski"
 
-    # KFold
+    if x== 'c': color = "czarny"
+    else: color = "niebieski"
+
     k = 5
     kf = KFold(n_splits=k, shuffle=True, random_state=42)
 
     results = []
 
-    for z in zmienna:
+    for z in parm:
             fold = 1
             for train_index, val_index in kf.split(X_all):
                 print(f"\n=== Pooling method {z} | Fold {fold} ===")
@@ -107,12 +105,14 @@ def train_model(x, zmienna):
 
                 fold += 1
 
-    # Zapisz do Excela
     df = pd.DataFrame(results)
-    df.to_excel(f"wyniki_liczba_wyjsc_warstwy_ukrytej_polaczonej51.xlsx", index=False)
+    df.to_excel(f"{color}_wyniki_liczba_wyjsc_warstwy_ukrytej_polaczonej_1.xlsx", index=False)
 
-    print("\n=== Gotowe ===")
-    print(df)
+def main():
+    df = train_model(data_key="all", units_list=hidden_units)
+    print("\n=== Training completed ===")
 
-train_model('all', wyjscia)
+
+if __name__ == "__main__":
+    main()
 
